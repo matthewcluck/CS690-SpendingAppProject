@@ -19,7 +19,6 @@ class Program
                 break;
             }
         }
-
         ConsoleUI theUI = new ConsoleUI();
         theUI.Show();
     }
