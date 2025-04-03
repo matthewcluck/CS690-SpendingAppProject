@@ -1,22 +1,27 @@
 ﻿namespace SpendingApp;
-using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
+        FileSaver fileSaver = new FileSaver("user-data.txt");
+
         int balance;
-        
-        do {
+
+        while(true)
+        {
             Console.WriteLine("Please enter your bank account balance. No dollar sign, round to the nearest dollar.");
             string input = Console.ReadLine();
 
-            if (!int.TryParse(input, out balance))
+            if (int.TryParse(input, out balance))
             {
-                    Console.WriteLine("Invalid input. Please enter a whole number.");
-                    continue;
+                fileSaver.AppendLine(balance.ToString());
+                break;
             }
-        } while (balance != 700);
+        }
 
+        ConsoleUI theUI = new ConsoleUI();
+        theUI.Show();
     }
 }
+
