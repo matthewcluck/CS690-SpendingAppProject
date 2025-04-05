@@ -10,17 +10,18 @@ class Program
 
         while(true)
         {
-            Console.WriteLine("Please enter your bank account balance. No dollar sign, round to the nearest dollar.");
+            Console.WriteLine("Lets start by entering your bank account balance. No dollar sign, round to the nearest dollar.");
             string input = Console.ReadLine();
 
             if (int.TryParse(input, out balance))
             {
                 fileSaver.AppendLine(balance.ToString());
+                
                 break;
             }
         }
+        
         ConsoleUI theUI = new ConsoleUI();
         theUI.Show();
     }
 }
-
