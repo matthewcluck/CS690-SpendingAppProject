@@ -18,7 +18,7 @@ namespace SpendingApp
 
             while (true)
             {
-                string expenseDollar = UserInputHelper.AskForInput("Now please enter an expense rounded to the nearest dollar.");
+                string expenseDollar = UserInputHelper.AskForInput("Now please enter an expense rounded to the nearest dollar. ");
 
                 if (int.TryParse(expenseDollar, out expenseDollarInt) && expenseDollarInt >= 0)
                 {
@@ -32,7 +32,7 @@ namespace SpendingApp
 
             while (true)
             {
-                expenseType = UserInputHelper.AskForInput("Now enter type of expense, such as shopping.");
+                expenseType = UserInputHelper.AskForInput("Now enter type of expense, such as shopping. ");
 
                 if (true)
                 {
@@ -46,7 +46,7 @@ namespace SpendingApp
 
             while (true)
             {
-                expenseDay = UserInputHelper.AskForInput("Now finally enter a day of the week, like Tuesday.");
+                expenseDay = UserInputHelper.AskForInput("Now finally enter a day of the week, like Tuesday. ");
                 if (expenseDay == "Monday" || expenseDay == "Tuesday" || expenseDay == "Wednesday" ||
                     expenseDay == "Thursday" || expenseDay == "Friday" || expenseDay == "Saturday" ||
                     expenseDay == "Sunday")
@@ -62,7 +62,7 @@ namespace SpendingApp
 
             Expense newExpense = new Expense(expenseDollarInt, expenseType, expenseDay);
             ExpenseDataStore.AddExpense(newExpense);
-            Console.WriteLine($"You spent ${newExpense.Total} on {newExpense.Type} on {newExpense.Day}. Data collected!");
+            Console.WriteLine($"You spent ${newExpense.Total} on {newExpense.Type} on {newExpense.Day}.");
 
             balance.AddExpense(newExpense.Total);
 

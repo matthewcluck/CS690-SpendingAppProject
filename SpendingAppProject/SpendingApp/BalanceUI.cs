@@ -15,7 +15,7 @@ namespace SpendingApp
         {
             while (true)
             {
-                Console.WriteLine("Let's start by entering your bank account balance. No dollar sign, round to the nearest dollar.");
+                Console.WriteLine("Let's start by entering your bank account balance. No dollar sign, round to the nearest dollar. ");
                 string input = Console.ReadLine();
 
                 if (int.TryParse(input, out balance))

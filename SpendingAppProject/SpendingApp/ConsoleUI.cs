@@ -29,7 +29,7 @@ namespace SpendingApp
                 }
                 else if (mode == "3")
                 {
-                    Console.WriteLine("Data tracker function");
+                    Console.WriteLine("Sorry, this mode has not been implemented yet.");
                     break;
                 }
                 else if (mode == "4")
