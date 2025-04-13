@@ -29,7 +29,8 @@ namespace SpendingApp
                 }
                 else if (mode == "3")
                 {
-                    Console.WriteLine("Sorry, this mode has not been implemented yet.");
+                    TrackerUI theTrackerUI = new TrackerUI(balance);
+                    theTrackerUI.Show();
                     break;
                 }
                 else if (mode == "4")
