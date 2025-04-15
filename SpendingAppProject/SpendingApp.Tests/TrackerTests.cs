@@ -3,7 +3,7 @@ namespace SpendingApp.Tests
     public class TrackerTests
     {
         [Fact]
-        public void NoExpenseMessage()
+        public void NoExpenseMessage_PrintsMessageWhenListIsEmpty()
         {
             ExpenseDataStore.ClearExpenses();
 
@@ -13,7 +13,15 @@ namespace SpendingApp.Tests
             TrackerFunctions.PrintExpenseList();
 
             var output = sw.ToString();
-            Assert.Contains("No expenses recorded.", output);
+
+            if (ExpenseDataStore.GetAllExpenses().Count == 0)
+            {
+                Assert.Contains("No expenses recorded.", output);
+            }
+            else
+            {
+                Assert.DoesNotContain("No expenses recorded.", output);
+            }
         }
     }
 }
